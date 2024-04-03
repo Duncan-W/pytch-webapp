@@ -352,7 +352,7 @@ const Welcome: React.FC<EmptyProps> = () => {
     </p>
   </section>
   <section className="subgrid-video">
-    <button id="myBtn" aria-label="Video overview of Pytch">
+    <div id="myBtn" aria-label="Video overview of Pytch">
       <svg
         fill="#fff"
         height="200px"
@@ -378,7 +378,7 @@ const Welcome: React.FC<EmptyProps> = () => {
         </g>
       </svg>
       {/* svgrepo */}
-    </button>
+    </div>
   </section>
   
 </header>
@@ -563,9 +563,9 @@ const Welcome: React.FC<EmptyProps> = () => {
     </div>
   </footer>
   <>
-  <div id="myModal" className="wodal">
+  <div id="myModal" className="i_cant_believe_its_not_modal">
     {/* Modal content */}
-    <div className="wodal-content">
+    <div className="i_cant_believe_its_not_modal-content">
       <button aria-label="Close" className="close">
         ×
       </button>
@@ -574,10 +574,10 @@ const Welcome: React.FC<EmptyProps> = () => {
       </video>
     </div>
   </div>
-  <div id="myModal1" className="wodal">
+  <div id="myModal1" className="i_cant_believe_its_not_modal">
     {/* Modal content */}
     <h1 id="myModal1_header"> I want to ... </h1>
-    <div className="wodal-content">
+    <div className="i_cant_believe_its_not_modal-content">
       <button aria-label="Close" className="close">
         ×
       </button>

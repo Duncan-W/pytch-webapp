@@ -1,11 +1,10 @@
 $color_1: white;
-$color_2: #fff792;
+$pytch-colour-main-yellow: #fff792;
 $color_3: #aaaaaa;
 $color_4: #000;
 $color_5: #aaa;
 $color_6: #fff;
 $color_7: #ff44b0;
-$color_8: black;
 $color_9: #D5D7DB;
 $font-family_1: 'Hanken Grotesk', sans-serif;
 $font-family_2: 'Roboto', sans-serif;
@@ -69,35 +68,11 @@ $background-color_17: $main-bg-color;
 $border-color_1: transparent transparent transparent $pytch-colour-accent-pink;
 */
 
-$color_3: #aaaaaa;
-$color_4: #000;
-$color_5: #aaa;
-$color_6: #fff;
-$color_8: black;
-$color_9: #D5D7DB;
-$font-family_1: 'Hanken Grotesk', sans-serif;
-$font-family_2: 'Roboto', sans-serif;
-$font-family_3: "IBM Plex Sans",Helvetica,Arial,sans-serif;
-$background-color_2: transparent;
-$background-color_3: rgb(0,0,0);
-$background-color_4: rgba(0,0,0,0.4);
-$background-color_5: #fefefe;
-$background-color_6: #44b;
-$background-color_7: #fff;
-$background-color_8: #228;
-$background-color_9: #333;
-$background-color_11: black;
-$background-color_12: rgba(76, 76, 76, 0.42);
-$background-color_13: #3f6796;
-$background-color_14: #a234ff;
-$background-color_16: #dc1d8c;
-$border-left-color_1: #0585e8;
+
+
 
 /* Hansken Grotesk */
 /* Px Grotesk */
-
-/* divider has a number of paragrah elements which add unwanted whitespace on small screens. 
-    Ensuring that text within coding journey has adequite space to not word wrap but not add unwanted page width is a pain */
 
 @font-face {
 	font-family: "icons";
@@ -134,7 +109,7 @@ section {
 	cursor: pointer;
 	font-size: 1.3rem;
 	background-color: $background-color_1;
-	border: 2px solid #fff792;
+	border: 2px solid $pytch-colour-main-yellow;
 	width: 240px;
 	height: 84px;
 	background-image: url('public/assets/MicrosoftTeams-image.png');
@@ -206,7 +181,7 @@ button {
 		max-width: 100%;
 	}
 	a {
-		color: $color_2 ;
+		color: $pytch-colour-main-yellow ;
 		transition: color 0.22s ease-out;
 		text-decoration: none;
 	}
@@ -259,7 +234,7 @@ button {
 	height: 90%;
 	width: 90%;
 }
-.wodal-content {
+.i_cant_believe_its_not_modal-content {
 	.ccont {
 		border-radius: 5px;
 	}
@@ -269,7 +244,7 @@ button {
 	border: 1px solid #000000;
 	width: 80%;
 }
-.wodal {
+.i_cant_believe_its_not_modal {
 	display: none;
 	position: fixed;
 	z-index: 2;
@@ -304,7 +279,7 @@ button {
 }
 nav {
 	background-color: $background-color_1;
-	border-bottom: 0.3rem solid #fff792;
+	border-bottom: 0.3rem solid $pytch-colour-main-yellow;
 	grid-area: nav;
 	background-color: $background-color_8;
 	color: $color_6;
@@ -315,7 +290,7 @@ nav {
 	align-items: center;
 	margin: 0px;
 	a {
-		color: $color_2 !important;
+		color: $pytch-colour-main-yellow !important;
 		transition: color 0.22s ease-out;
 		text-decoration: none;
 	}
@@ -403,7 +378,7 @@ nav {
 }
 header {
 	background-color: $background-color_1;
-	border-bottom: 0.4rem solid #fff792;
+	border-bottom: 0.4rem solid $pytch-colour-main-yellow;
 	grid-area: header;
 	display: grid;
 	text-align: center;
@@ -414,7 +389,7 @@ header {
 	background-size: 50%;
 	background-size: cover;
 	min-height: 60vh;
-	border-bottom: 2px solid #fcf58c;
+
 	color: $color_1;
 	padding-bottom: 10vh;
 	section {
@@ -426,7 +401,7 @@ header {
 	grid-area: contact;
 	max-width: 100vw;
 	.mail {
-		color: $color_8 !important;
+		color: $color_4 !important;
 		font-size: 5rem;
 	}
 }
@@ -448,7 +423,7 @@ footer {
 	color: $color_1;
 	max-width: 100vw;
 	a {
-		color: $color_2 ;
+		color: $pytch-colour-main-yellow ;
 		transition: color 0.22s ease-out;
 		text-decoration: none;
 	}
@@ -772,7 +747,7 @@ html {
 		margin: 10px 0;
 		border: 1px solid white;
 	}
-	.wodal-content {
+	.i_cant_believe_its_not_modal-content {
 		width: 90% !important;
 		overflow: hidden !important;
 	}
@@ -812,6 +787,7 @@ html {
 	header {
 		grid-template-columns: 1fr;
 		height: 450px;
+		min-height: 140vh !important;
 		section {
 			padding-left: 0vw;
 			p {
