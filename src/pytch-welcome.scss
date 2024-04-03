@@ -1,11 +1,14 @@
+ 
 $color_1: white;
 $pytch-colour-main-yellow: #fff792;
 $color_3: #aaaaaa;
 $color_4: #000;
 $color_5: #aaa;
-$color_6: #fff;
 $color_7: #ff44b0;
 $color_9: #D5D7DB;
+$grey_1: rgb(114, 114, 114);
+$grey_2: rgb(197, 197, 197);
+$grey_3: rgb(218, 218, 218); 
 $font-family_1: 'Hanken Grotesk', sans-serif;
 $font-family_2: 'Roboto', sans-serif;
 $font-family_3: "IBM Plex Sans",Helvetica,Arial,sans-serif;
@@ -19,7 +22,6 @@ $background-color_7: #fff;
 $background-color_8: #228;
 $background-color_9: #333;
 $background-color_10: #00b5b0;
-$background-color_11: black;
 $background-color_12: rgba(76, 76, 76, 0.42);
 $background-color_13: #3f6796;
 $background-color_14: #a234ff;
@@ -33,7 +35,7 @@ $border-left-color_1: #0585e8;
     max-width: 36rem;
     padding: 1rem;
     margin: auto;
-    background-color: white;
+    background-color: $background-color_7;
     border-radius: 4px;
     border: 1px solid $color_1;
     font-size: 110%;
@@ -52,7 +54,7 @@ $border-left-color_1: #0585e8;
 		-webkit-user-select: none;
 		user-select: none;
 		cursor: pointer;
-		color: #306998;
+		color: $background-color_1;
 	}
   }
 
@@ -173,10 +175,10 @@ button {
 		max-width: 90%;
 	}
 	h2 {
-		color: white;
+		color: $color_1;
 	}
 	p {
-		color: white;
+		color: $color_1;
 		margin-top: 30px;
 		max-width: 100%;
 	}
@@ -282,7 +284,7 @@ nav {
 	border-bottom: 0.3rem solid $pytch-colour-main-yellow;
 	grid-area: nav;
 	background-color: $background-color_8;
-	color: $color_6;
+	color: $color_1;
 	padding: 4px;
 	display: flex;
 	flex-direction: row;
@@ -318,7 +320,7 @@ nav {
 		margin: 0px 2rem;
 		font-size: 1.5rem;
 		font-weight: 700;
-		color: $color_6;
+		color: $color_1;
 		&:hover {
 			background-color: $background-color_6;
 			border-radius: 4px;
@@ -329,7 +331,7 @@ nav {
 		margin: 0px 2rem;
 		font-size: 1.5rem;
 		font-weight: 700;
-		color: $color_6;
+		color: $color_1;
 		&:hover {
 			background-color: $background-color_6;
 			border-radius: 4px;
@@ -348,12 +350,12 @@ nav {
 			margin-right: 2rem;
 			padding: 8px;
 			font-size: 1.25rem;
-			color: $color_6;
+			color: $color_1;
 			cursor: pointer;
 			-webkit-user-select: none;
 			user-select: none;
 			a {
-				color: $color_6;
+				color: $color_1;
 			}
 		}
 	}
@@ -435,8 +437,8 @@ footer {
 	padding: 10px;
 	background-color: $background-color_10;
 	color: $color_1;
-	border-top: 1.5px solid #306998;
-	border-bottom: 1.5px solid #306998;
+	border-top: 1.5px solid $background-color_1;
+	border-bottom: 1.5px solid $background-color_1;
 	margin-bottom: 20px;
 	.section-content {
 		display: flex;
@@ -480,7 +482,7 @@ footer {
 	height: 14rem;
 	border-top-right-radius: 1.25rem;
 	border-top-left-radius: 1.25rem;
-	background-color: $background-color_11;
+	background-color: $background-color_3;
 	overflow: hidden;
 }
 .ctop {
@@ -508,7 +510,7 @@ footer {
 	height: 1.25rem;
 	border-bottom-right-radius: 1.25rem;
 	border-bottom-left-radius: 1.25rem;
-	background: linear-gradient(35deg, rgb(114, 114, 114), rgb(197, 197, 197), rgb(218, 218, 218));
+	background: linear-gradient(35deg, $grey_1, $grey_2, $grey_3);
 	border-bottom: 1px solid rgb(92, 91, 91);
 }
 .cleg {
@@ -516,7 +518,7 @@ footer {
 	vertical-align: top;
 	width: 4rem;
 	height: 1.25rem;
-	background: linear-gradient(0deg, rgb(114, 114, 114), rgb(255, 255, 255), rgb(197, 197, 197), rgb(114, 114, 114));
+	background: linear-gradient(0deg, $grey_1, rgb(255, 255, 255), $grey_2, $grey_1);
 	-webkit-clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
 	clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
 }
@@ -525,12 +527,12 @@ footer {
 	vertical-align: top;
 	width: 3.25rem;
 	height: 0.5rem;
-	background: linear-gradient(0deg, rgb(197, 197, 197), rgb(197, 197, 197), rgb(114, 114, 114));
+	background: linear-gradient(0deg, $grey_2, $grey_2, $grey_1);
 	-webkit-clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);
 	clip-path: polygon(12% 0%, 88% 0%, 100% 100%, 0% 100%);
 	border-bottom-right-radius: 2.25rem;
 	border-bottom-left-radius: 2.75rem;
-	border-bottom: 0.1rem solid rgb(114, 114, 114);
+	border-bottom: 0.1rem solid $grey_1;
 }
 .site-footer {
 	background-color: $background-color_13;
@@ -585,7 +587,7 @@ footer {
 	border: none;
 	border-radius: 15px;
 	background-color: $background-color_14;
-	color: $color_6;
+	color: $color_1;
 	text-align: center;
 	text-decoration: none;
 	font-size: 16px;
@@ -597,7 +599,7 @@ footer {
 	border: none;
 	border-radius: 10px;
 	background-color: $background-color_15;
-	color: $color_6;
+	color: $color_1;
 	text-align: center;
 	text-decoration: none;
 	font-size: 16px;
@@ -690,24 +692,7 @@ textarea {
 		overflow: auto;
 	}
 }
-/*
-&::-webkit-input-placeholder {
-	color: $color_9;
-	font-size: 12px;
-}
-&:-moz-placeholder {
-	color: $color_9;
-	font-size: 12px;
-}
-&::-moz-placeholder {
-	color: $color_9;
-	font-size: 12px;
-}
-&:-ms-input-placeholder {
-	color: $color_9;
-	font-size: 12px;
-}
-*/
+
 html {
 	min-height: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -745,7 +730,7 @@ html {
 		font-size: medium;
 		height: auto;
 		margin: 10px 0;
-		border: 1px solid white;
+		border: 1px solid $color_1;
 	}
 	.i_cant_believe_its_not_modal-content {
 		width: 90% !important;
