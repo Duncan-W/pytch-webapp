@@ -16,13 +16,6 @@ import { IDEContents as IDEContents_Junior } from "./Junior/IDEContents";
 import { ExceptionDisplay } from "./ExceptionDisplay";
 
 
-import "../project-list.scss";
-import "../pytch-ide.scss";
-import "../pytch-jr-ide.scss";
-import "../pytch-jr-lesson.scss";
-import "../help-sidebar.scss";
-import "../font-awesome-lib";
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 declare let Sk: any;
 

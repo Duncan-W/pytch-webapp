@@ -166,7 +166,7 @@ const Welcome: React.FC<EmptyProps> = () => {
       cards.push(nodeObject);
     });
     // Now cards contains the objects with node and children for each element with the class "TutorialMiniCard"
-    console.log(cards);
+    
 
     let current_window_size: number;
 
@@ -183,7 +183,7 @@ const Welcome: React.FC<EmptyProps> = () => {
 
       if (new_window_size !== current_window_size) {
         current_window_size = new_window_size;
-        console.log("Window size changed to " + current_window_size);
+        //console.log("Window size changed to " + current_window_size);
         createCards(current_window_size);
       }
     }
@@ -235,15 +235,14 @@ const Welcome: React.FC<EmptyProps> = () => {
 
           // Create a document fragment
           const fragment = document.createDocumentFragment();
-          //console.log("____________________________________");
+
 
           for (let i = window_position, steps = window_size; steps > 0; steps--) {
             i = (i + 1) % cards.length; // Increment for any arrow
-            //console.log(` ${i} `);
 
             // Append the child element to the fragment
             fragment.appendChild(cards[i].node);
-            //console.log(cards[i]);
+
           }
 
           // Append the fragment to "TutorialCarousel" in a single operation
@@ -336,9 +335,8 @@ const Welcome: React.FC<EmptyProps> = () => {
 
 
   return (
-    // The style on the Python logo <img> is to make it the same width
-    // as the Scratch logo, otherwise the text block is off-centre.
-    <>
+
+    <div className="welcometsx">
       <NavBanner />
       <header>
         <section>
@@ -430,6 +428,16 @@ const Welcome: React.FC<EmptyProps> = () => {
               , inspired by the 1982 arcade classic.
             </p>
           </TutorialMiniCard>
+
+          <TutorialMiniCard
+            title="Splat the moles"
+            slug="splat-the-moles"
+            screenshotBasename="screenshot-w360.jpg" // bit random
+          >
+            <p>
+              A game where the player has to splat moles to score points. But if they miss, they lose all their points!
+            </p>
+          </TutorialMiniCard>
         </div>
         <div className="outer-container">
           <div className="left-arrow">❬</div>
@@ -438,7 +446,6 @@ const Welcome: React.FC<EmptyProps> = () => {
         </div>
 
       </main>
-      <>
         <section className="easy">
           <div className="section-heading">
             <img src={logosUrl} alt="" className="section-logo" />
@@ -595,10 +602,8 @@ const Welcome: React.FC<EmptyProps> = () => {
             </div>
           </div>
         </>
+    </div>
 
-      </>
-
-    </>
   );
 };
 
