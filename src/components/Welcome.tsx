@@ -320,13 +320,11 @@ const Welcome: React.FC<EmptyProps> = () => {
 
   });
 
-  const scratchLogoUrl = urlWithinApp("/assets/scratch-logo.png");
-  const pythonLogoUrl = urlWithinApp("/assets/python-logo.png");
   const logosUrl = urlWithinApp("/assets/Icon-02.png"); 
   const pytchUrl = urlWithinApp("/assets/pytch_org.png");
   const pytchjrUrl = urlWithinApp("/assets/pytch_jr.png");
   const invadersUrl = urlWithinApp("/assets/invaders.png");
-  const backgroundUrl = urlWithinApp("/assets/IMG_20230511_182016_068-1-scaled-1.webp");
+  const backgroundUrl = urlWithinApp("/assets/pytch_girls_computer.webp");
   const acknowledgementsUrl = urlWithinApp("/assets/organisation.png");
 
   const videoUrl = urlWithinApp("/assets/Overview.mp4");
