@@ -9,7 +9,7 @@ const NavBanner = () => {
 <nav>
    <div className="title-and-version">
      <h1>
-       <a href="/app/" style={{ color: "white !important" }}>
+       <a href="./" style={{ color: "white !important" }}>
          Pytch
        </a>
      </h1>
