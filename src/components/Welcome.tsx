@@ -221,9 +221,9 @@ const Welcome: React.FC<EmptyProps> = () => {
 
       function handleArrowKeyPress(key: string) {
         // Update the window_position based on the arrow key
-        if (key === "ArrowRight") {
+        if (key === "ArrowLeft") {
           window_position = (window_position - 1 + cards.length) % cards.length; // Decrement for left arrow
-        } else if (key === "ArrowLeft") {
+        } else if (key === "ArrowRight") {
           window_position = (window_position + 1) % cards.length; // Increment for right arrow
         }
         //console.log(`Arrow key pressed: ${key}`);
@@ -385,7 +385,7 @@ const Welcome: React.FC<EmptyProps> = () => {
         <ToggleUiStylePanel />
 
 
-        <h2>Featured projects</h2>
+        
 
         <div style={{ display: "none" }} className="demo-cards">
           <TutorialMiniCard
@@ -498,15 +498,15 @@ const Welcome: React.FC<EmptyProps> = () => {
           </div>
         </section>
         <div className="section-buttons contact">
-          <span style={{ paddingLeft: "5%" }}>
+          <span style={{ paddingLeft: "10%" }}>
             <a className="mail" href="mailto:info@pytch.org">
               ✉
             </a>
           </span>
           {/* UTF-8 character for an envelope */}
-          <p className="large-text">
+          <p className="large-text" style={{ paddingRight: "10%" }}>
             Please email us at{" "}
-            <a style={{ color: "black !important" }} href="mailto:info@pytch.org">
+            <a style={{ color: "#000"}} href="mailto:info@pytch.org">
               info@pytch.org
             </a>{" "}
             with any feedback or suggestions

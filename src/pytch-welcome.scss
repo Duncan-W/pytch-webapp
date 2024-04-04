@@ -34,6 +34,7 @@
  	max-width: 36rem;
  	padding: 1rem;
  	margin: auto;
+	margin-bottom: 2rem;
  	background-color: $background-color_7;
  	border-radius: 4px;
  	border: 1px solid $color_1;
@@ -83,7 +84,7 @@ $border-color_1: transparent transparent transparent $pytch-colour-accent-pink;
  	src: url("../fonts/icons/icons.eot?2eea613914c1e47b17dc92d510b7b4bd?#iefix") format("embedded-opentype"), url("../fonts/icons/icons.woff2?2eea613914c1e47b17dc92d510b7b4bd") format("woff2"), url("../fonts/icons/icons.woff?2eea613914c1e47b17dc92d510b7b4bd") format("woff"), url("../fonts/icons/icons.ttf?2eea613914c1e47b17dc92d510b7b4bd") format("truetype"), url("../fonts/icons/icons.svg?2eea613914c1e47b17dc92d510b7b4bd#icons") format("svg");
  }
 
- /* Media query for mobile */
+
  .sitemap {
  	display: flex;
  	margin: auto;
@@ -400,28 +401,7 @@ $border-color_1: transparent transparent transparent $pytch-colour-accent-pink;
  	min-height: 100vh;
  }
 
- header {
- 	background-color: $background-color_1;
- 	border-bottom: 0.4rem solid $pytch-colour-main-yellow;
- 	grid-area: header;
- 	display: grid;
- 	text-align: center;
- 	grid-template-columns: 1fr 2fr;
- 	align-items: center;
- 	background-position: 55% 40%;
- 	background-image: url('public/assets/pytch_girls_computer.webp');
- 	background-size: 50%;
- 	background-size: cover;
- 	min-height: 60vh;
 
- 	color: $color_1;
- 	padding-bottom: 10vh;
-
- 	section {
- 		max-width: 100vw;
- 		padding-left: 5vw;
- 	}
- }
 
  .contact {
  	grid-area: contact;
@@ -440,25 +420,6 @@ $border-color_1: transparent transparent transparent $pytch-colour-accent-pink;
  	z-index: 2;
  }
 
- main {
- 	grid-area: main;
- 	padding: 2%;
- }
-
- footer {
- 	grid-area: footer;
- 	text-align: center;
- 	padding: 10px;
- 	background-color: $background-color_9;
- 	color: $color_1;
- 	max-width: 100vw;
-
- 	a {
- 		color: $pytch-colour-main-yellow ;
- 		transition: color 0.22s ease-out;
- 		text-decoration: none;
- 	}
- }
 
  .easy {
  	grid-area: easyish;
@@ -777,6 +738,50 @@ $border-color_1: transparent transparent transparent $pytch-colour-accent-pink;
  	* {
  		font-family: $font-family_1 !important;
  	}
+
+	 header {
+		background-color: $background-color_1;
+		border-bottom: 0.4rem solid $pytch-colour-main-yellow;
+		grid-area: header;
+		display: grid;
+		text-align: center;
+		grid-template-columns: 1fr 2fr;
+		align-items: center;
+		background-position: 55% 40%;
+		background-image: url('public/assets/pytch_girls_computer.webp');
+		background-size: 50%;
+		background-size: cover;
+		min-height: 60vh;
+	
+		color: $color_1;
+		padding-bottom: 10vh;
+	
+		section {
+			max-width: 100vw;
+			padding-left: 5vw;
+		}
+	}
+	
+	 main {
+		 grid-area: main;
+		 padding: 2%;
+	 }
+	
+	 footer {
+		 grid-area: footer;
+		 text-align: center;
+		 padding: 10px;
+		 background-color: $background-color_9;
+		 color: $color_1;
+		 max-width: 100vw;
+	
+		 a {
+			 color: $pytch-colour-main-yellow ;
+			 transition: color 0.22s ease-out;
+			 text-decoration: none;
+		 }
+	 }
+	
 
  	body {
  		margin: 0px;
