@@ -320,10 +320,9 @@ const Welcome: React.FC<EmptyProps> = () => {
   });
 
   const logosUrl = urlWithinApp("/assets/Icon-02.png");
-  const pytchUrl = urlWithinApp("/assets/pytch_org.png");
-  const pytchjrUrl = urlWithinApp("/assets/pytch_jr.png");
+  const pytchUrl = urlWithinApp("/assets/normal-editor-preview-1024x693.png");
+  const pytchjrUrl = urlWithinApp("/assets/script-by-script-preview-1-1024x693.png");
   const invadersUrl = urlWithinApp("/assets/invaders.png");
-  const backgroundUrl = urlWithinApp("/assets/pytch_girls_computer.webp");
   const acknowledgementsUrl = urlWithinApp("/assets/organisation.png");
 
   const videoUrl = urlWithinApp("/assets/Overview.mp4");
@@ -450,7 +449,7 @@ const Welcome: React.FC<EmptyProps> = () => {
           <div className="section-heading">
             <img src={logosUrl} alt="" className="section-logo" />
             <h2>
-              Pytch<span role="presentation">_</span> in action
+              Learn Python <br /> with Pytch<span role="presentation">_</span>
             </h2>
           </div>
           <div className="section-content">
