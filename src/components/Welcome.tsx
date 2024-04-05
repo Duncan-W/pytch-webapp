@@ -323,7 +323,9 @@ const Welcome: React.FC<EmptyProps> = () => {
   const pytchUrl = urlWithinApp("/assets/normal-editor-preview-1024x693.png");
   const pytchjrUrl = urlWithinApp("/assets/script-by-script-preview-1-1024x693.png");
   const invadersUrl = urlWithinApp("/assets/invaders.png");
-  const acknowledgementsUrl = urlWithinApp("/assets/organisation.png");
+  const sfi_logo = urlWithinApp("/assets/sfi_logo.png");
+  const tcd_logo = urlWithinApp("/assets/tcd_logo.png");
+  const tudublin_logo = urlWithinApp("/assets/tudublin_logo.png");
 
   const videoUrl = urlWithinApp("/assets/Overview.mp4");
   const launchCreate = useStoreActions(
@@ -502,7 +504,6 @@ const Welcome: React.FC<EmptyProps> = () => {
               ✉
             </a>
           </span>
-          {/* UTF-8 character for an envelope */}
           <p className="large-text" style={{ paddingRight: "10%" }}>
             Please email us at{" "}
             <a style={{ color: "#000"}} href="mailto:info@pytch.org">
@@ -562,7 +563,10 @@ const Welcome: React.FC<EmptyProps> = () => {
     */}
             </div>
             <div className="section-images">
-              <img src={acknowledgementsUrl} alt="Image 1" />
+              <img src={sfi_logo} alt="Science Foundation Ireland" />
+              <img src={tcd_logo} alt="Trinity College Dublin" />
+              <img src={tudublin_logo} alt="TUDublin" />
+
             </div>
           </div>
         </footer>

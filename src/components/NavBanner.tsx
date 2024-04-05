@@ -14,7 +14,7 @@ const NavBanner = () => {
           </a>
         </h1>
         <a className="version-tag" href={withinSite("/doc/releases/changelog.html")}>
-          v1.11.1
+          v2.0.0
         </a>
       </div>
       <div
