@@ -1,12 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState,useEffect, useRef } from "react";
 import NavBanner from "./NavBanner";
-
 import TutorialMiniCard from "./TutorialMiniCard";
+import SiteFooter from "./SiteFooter";
 import { EmptyProps, assertNever } from "../utils";
 import { useStoreActions, useStoreState } from "../store";
 import { urlWithinApp } from "../env-utils";
 import { Link } from "./LinkWithinApp";
-import { pytchResearchSiteUrl } from "../constants";
 import { useSetActiveUiVersionFun } from "./hooks/active-ui-version";
 import { EditorKindThumbnail } from "./EditorKindThumbnail";
 
@@ -126,7 +125,60 @@ const ToggleUiStylePanel: React.FC<EmptyProps> = () => {
 };
 
 
+const TutorialCarousel = () => {
+  const [windowPosition, setWindowPosition] = useState(0);
+  const [currentWindowSize, setCurrentWindowSize] = useState(3); // Default window size
+  let cards = [];
 
+  useEffect(() => {
+    const screenSmall = window.matchMedia('(max-width: 800px)');
+    const screenMedium = window.matchMedia('(max-width: 1100px)');
+
+    const updateWindowSize = () => {
+      if (screenSmall.matches) {
+        setCurrentWindowSize(1);
+      } else if (screenMedium.matches) {
+        setCurrentWindowSize(2);
+      } else {
+        setCurrentWindowSize(3);
+      }
+    };
+
+    const handleArrowKeyPress = (event) => {
+      if (event.key === 'ArrowLeft') {
+        setWindowPosition((prevPosition) => (prevPosition - 1 + cards.length) % cards.length);
+      } else if (event.key === 'ArrowRight') {
+        setWindowPosition((prevPosition) => (prevPosition + 1) % cards.length);
+      }
+    };
+
+    const handleArrowClick = (direction) => {
+      if (direction === 'right') {
+        handleArrowKeyPress({ key: 'ArrowRight' });
+      } else if (direction === 'left') {
+        handleArrowKeyPress({ key: 'ArrowLeft' });
+      }
+    };
+
+    window.addEventListener('resize', updateWindowSize);
+
+    return () => {
+      window.removeEventListener('resize', updateWindowSize);
+    };
+  }, []); // Empty dependency array, as we don't depend on any props or state
+
+  return (
+    <div id="TutorialCarousel">
+      {/* Render cards based on window position and size */}
+      {cards.slice(windowPosition).concat(cards.slice(0, windowPosition)).map((card, index) => (
+        <div key={index}>{card.node}</div>
+      ))}
+      {/* Your left and right arrow buttons go here */}
+      <button className="left-arrow" onClick={() => handleArrowClick('left')}>&lt;</button>
+      <button className="right-arrow" onClick={() => handleArrowClick('right')}>&gt;</button>
+    </div>
+  );
+};
 
 
 const Welcome: React.FC<EmptyProps> = () => {
@@ -151,7 +203,12 @@ const Welcome: React.FC<EmptyProps> = () => {
     const screen_small = window.matchMedia("(max-width: 800px)");
     const screen_medium = window.matchMedia("(max-width: 1100px)");
 
-    let cards = [];
+    interface Card {
+      node: Element;
+      children: Element[];
+  }
+
+    let cards: Card[] = [];
 
     // Find all TutorialMiniCards (hope this isn't too much code smell)
     let tutorialMiniCards = document.querySelectorAll(".TutorialMiniCard");
@@ -171,7 +228,7 @@ const Welcome: React.FC<EmptyProps> = () => {
     let current_window_size: number;
 
     function updateWindowSize() {
-      let new_window_size;
+      let new_window_size: number;
 
       if (screen_small.matches) {
         new_window_size = 1;
@@ -183,7 +240,6 @@ const Welcome: React.FC<EmptyProps> = () => {
 
       if (new_window_size !== current_window_size) {
         current_window_size = new_window_size;
-        //console.log("Window size changed to " + current_window_size);
         createCards(current_window_size);
       }
     }
@@ -194,7 +250,8 @@ const Welcome: React.FC<EmptyProps> = () => {
     window.addEventListener("resize", updateWindowSize);
 
     function createCards(window_size: number) {
-      let window_position = 0;
+      let window_position: number;
+      window_position = 0;
 
       handleArrowKeyPress("ArrowRight"); // start Carousel
 
@@ -323,9 +380,7 @@ const Welcome: React.FC<EmptyProps> = () => {
   const pytchUrl = urlWithinApp("/assets/normal-editor-preview-1024x693.png");
   const pytchjrUrl = urlWithinApp("/assets/script-by-script-preview-1-1024x693.png");
   const invadersUrl = urlWithinApp("/assets/invaders.png");
-  const sfi_logo = urlWithinApp("/assets/sfi_logo.png");
-  const tcd_logo = urlWithinApp("/assets/tcd_logo.png");
-  const tudublin_logo = urlWithinApp("/assets/tudublin_logo.png");
+
 
   const videoUrl = urlWithinApp("/assets/Overview.mp4");
   const launchCreate = useStoreActions(
@@ -512,64 +567,7 @@ const Welcome: React.FC<EmptyProps> = () => {
             with any feedback or suggestions
           </p>
         </div>
-        <footer className="site-footer">
-          <div className="section-content">
-            <div className="sitemap">
-              <div className="list-container">
-                <h2>
-                  Contact us<span role="presentation">_</span>
-                </h2>
-                <ul>
-                  <li>
-                    <a href="mailto:info@pytch.org">Email</a>
-                  </li>
-                  <li>
-                    <a href="https://twitter.com/pytchlang/">Twitter</a>
-                  </li>
-                </ul>
-              </div>
-              <div className="list-container">
-                <h2>
-                  About<span role="presentation">_</span>
-                </h2>
-                <ul>
-                  <li>
-                    <a href="https://pytch.scss.tcd.ie/who-we-are/">Our team</a>
-                  </li>
-                  <li>
-                    <a href="https://pytch.scss.tcd.ie/research/">Our research</a>
-                  </li>
-                </ul>
-              </div>
-              <div className="list-container">
-                <h2>
-                  For teachers<span role="presentation">_</span>
-                </h2>
-                <ul>
-                  <li><Link to="/tutorials/">Tutorials</Link></li>
-                  <li>
-                    <a href="https://pytch.scss.tcd.ie/lesson-plans/">Lesson plans</a>
-                  </li>
-                </ul>
-              </div>
-              {/*
-    <div class="list-container">
-      <h2>Resources<span role="presentation">_</span></h2>
-      <ul>
-        <li><a href="https://www.pytch.org/doc/developer.html">Info for developers</a></li>
-        <li><a href="https://www.pytch.org/doc/webapp/user/index.html">Help</a></li>
-      </ul>
-    </div>
-    */}
-            </div>
-            <div className="section-images">
-              <img src={sfi_logo} alt="Science Foundation Ireland" />
-              <img src={tcd_logo} alt="Trinity College Dublin" />
-              <img src={tudublin_logo} alt="TUDublin" />
-
-            </div>
-          </div>
-        </footer>
+<SiteFooter></SiteFooter>
         <>
           <div id="myModal" className="i_cant_believe_its_not_modal">
             {/* Modal content */}
