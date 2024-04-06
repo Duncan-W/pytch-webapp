@@ -1,6 +1,7 @@
 import React, { useState,useEffect, useRef } from "react";
 import NavBanner from "./NavBanner";
 import TutorialMiniCard from "./TutorialMiniCard";
+import TutorialCarousel from "./TutorialCarousel";
 import SiteFooter from "./SiteFooter";
 import { EmptyProps, assertNever } from "../utils";
 import { useStoreActions, useStoreState } from "../store";
@@ -125,60 +126,7 @@ const ToggleUiStylePanel: React.FC<EmptyProps> = () => {
 };
 
 
-const TutorialCarousel = () => {
-  const [windowPosition, setWindowPosition] = useState(0);
-  const [currentWindowSize, setCurrentWindowSize] = useState(3); // Default window size
-  let cards = [];
 
-  useEffect(() => {
-    const screenSmall = window.matchMedia('(max-width: 800px)');
-    const screenMedium = window.matchMedia('(max-width: 1100px)');
-
-    const updateWindowSize = () => {
-      if (screenSmall.matches) {
-        setCurrentWindowSize(1);
-      } else if (screenMedium.matches) {
-        setCurrentWindowSize(2);
-      } else {
-        setCurrentWindowSize(3);
-      }
-    };
-
-    const handleArrowKeyPress = (event) => {
-      if (event.key === 'ArrowLeft') {
-        setWindowPosition((prevPosition) => (prevPosition - 1 + cards.length) % cards.length);
-      } else if (event.key === 'ArrowRight') {
-        setWindowPosition((prevPosition) => (prevPosition + 1) % cards.length);
-      }
-    };
-
-    const handleArrowClick = (direction) => {
-      if (direction === 'right') {
-        handleArrowKeyPress({ key: 'ArrowRight' });
-      } else if (direction === 'left') {
-        handleArrowKeyPress({ key: 'ArrowLeft' });
-      }
-    };
-
-    window.addEventListener('resize', updateWindowSize);
-
-    return () => {
-      window.removeEventListener('resize', updateWindowSize);
-    };
-  }, []); // Empty dependency array, as we don't depend on any props or state
-
-  return (
-    <div id="TutorialCarousel">
-      {/* Render cards based on window position and size */}
-      {cards.slice(windowPosition).concat(cards.slice(0, windowPosition)).map((card, index) => (
-        <div key={index}>{card.node}</div>
-      ))}
-      {/* Your left and right arrow buttons go here */}
-      <button className="left-arrow" onClick={() => handleArrowClick('left')}>&lt;</button>
-      <button className="right-arrow" onClick={() => handleArrowClick('right')}>&gt;</button>
-    </div>
-  );
-};
 
 
 const Welcome: React.FC<EmptyProps> = () => {
@@ -499,7 +447,8 @@ const Welcome: React.FC<EmptyProps> = () => {
           <div className="left-arrow">❬</div>
           <div id="TutorialCarousel">Next</div>
           <div className="right-arrow">❭</div>
-        </div>
+        </div>moo 
+        <TutorialCarousel></TutorialCarousel> cow
 
       </main>
         <section className="easy">
