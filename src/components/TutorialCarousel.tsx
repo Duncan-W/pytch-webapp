@@ -123,24 +123,20 @@ const TutorialCarousel: React.FC<EmptyProps> = () => {
   }, []); // Empty dependency array, as we don't depend on any props or state
 
   return (
-    <div id="TutorialCarousel">
 
-      {/* Your left and right arrow buttons go here */}
-
-
-      <div className="outer-container">
-        Prev
-        <div className="left-arrow" onClick={() => handleArrowClick('left')}>&lt; moo</div>
-
+    <div className="outer-container">
+      <div className="left-arrow" onClick={() => handleArrowClick('left')}>&lt;</div>
+      <div id="TutorialCarousel">
         {/* Render cards based on window position and size */}
         {cards
           .slice(windowPosition)
           .concat(cards.slice(0, windowPosition))
-          .map((card, index) => card)} 
-        <div className="right-arrow" onClick={() => handleArrowClick('right')}>&gt; boo</div>
-
+          .map((card, index) => card)}
       </div>
+      <div className="right-arrow" onClick={() => handleArrowClick('right')}>&gt;</div>
+
     </div>
+
   );
 };
 
