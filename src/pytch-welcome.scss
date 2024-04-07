@@ -162,7 +162,7 @@ $border-color_1: transparent transparent transparent $pytch-colour-accent-pink;
  		display: block;
  		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
  		filter: drop-shadow(5px 5px 5px #222);
- 		max-width: 90%;
+ 		max-width: 200px;
 		cursor: pointer;
  	}
 
@@ -996,15 +996,13 @@ $border-color_1: transparent transparent transparent $pytch-colour-accent-pink;
  		}
 		 .section-images {
 			flex-direction: column;
-			margin-bottom: -150px;
+			margin-bottom: -70px; 
+			/* ^ a bit of a hack*/
 			
 			img {
 				width: 80vw;
 				max-width: 60%;
 				margin-bottom: -10vh;
-				
-
-
 			}
 		}
  	}

@@ -148,115 +148,7 @@ const Welcome: React.FC<EmptyProps> = () => {
 
 
 
-    const screen_small = window.matchMedia("(max-width: 800px)");
-    const screen_medium = window.matchMedia("(max-width: 1100px)");
 
-    interface Card {
-      node: Element;
-      children: Element[];
-  }
-
-    let cards: Card[] = [];
-
-    // Find all TutorialMiniCards (hope this isn't too much code smell)
-    let tutorialMiniCards = document.querySelectorAll(".TutorialMiniCard");
-
-    // Iterate through each element and build the object with node and children
-    tutorialMiniCards.forEach((element) => {
-      let nodeObject = {
-        node: element,
-        children: Array.from(element.children),
-      };
-
-      cards.push(nodeObject);
-    });
-    // Now cards contains the objects with node and children for each element with the class "TutorialMiniCard"
-    
-
-    let current_window_size: number;
-
-    function updateWindowSize() {
-      let new_window_size: number;
-
-      if (screen_small.matches) {
-        new_window_size = 1;
-      } else if (screen_medium.matches) {
-        new_window_size = 2;
-      } else {
-        new_window_size = 3;
-      }
-
-      if (new_window_size !== current_window_size) {
-        current_window_size = new_window_size;
-        createCards(current_window_size);
-      }
-    }
-    // Initial update of window_size
-    updateWindowSize();
-
-    // Add event listener for window resize
-    window.addEventListener("resize", updateWindowSize);
-
-    function createCards(window_size: number) {
-      let window_position: number;
-      window_position = 0;
-
-      handleArrowKeyPress("ArrowRight"); // start Carousel
-
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
-          // Handle right or left arrow key press
-          handleArrowKeyPress(event.key);
-        }
-      });
-
-      /* Handle left/right arrow click events */
-      const rightArrowElement = document.querySelector(".right-arrow");
-      if (rightArrowElement) {
-        rightArrowElement.addEventListener("click", () => {
-          handleArrowKeyPress("ArrowRight");
-        });
-      }
-      const leftArrowElement = document.querySelector(".left-arrow");
-      if (leftArrowElement) {
-        leftArrowElement.addEventListener("click", () => {
-          handleArrowKeyPress("ArrowLeft");
-        });
-      }
-
-      function handleArrowKeyPress(key: string) {
-        // Update the window_position based on the arrow key
-        if (key === "ArrowLeft") {
-          window_position = (window_position - 1 + cards.length) % cards.length; // Decrement for left arrow
-        } else if (key === "ArrowRight") {
-          window_position = (window_position + 1) % cards.length; // Increment for right arrow
-        }
-        //console.log(`Arrow key pressed: ${key}`);
-        const tutorialCarousel = document.getElementById("TutorialCarousel");
-
-        if (tutorialCarousel) {
-          // Clear existing children
-          tutorialCarousel.innerHTML = "";
-
-          // Create a document fragment
-          const fragment = document.createDocumentFragment();
-
-
-          for (let i = window_position, steps = window_size; steps > 0; steps--) {
-            i = (i + 1) % cards.length; // Increment for any arrow
-
-            // Append the child element to the fragment
-            fragment.appendChild(cards[i].node);
-
-          }
-
-          // Append the fragment to "TutorialCarousel" in a single operation
-          tutorialCarousel.appendChild(fragment);
-        } else {
-          console.error("TutorialCarousel not found.");
-        }
-      }
-    }
 
     // Get references to both modals and buttons. If we have more than 2 this should be changed.
     let modal = document.getElementById("myModal");
@@ -391,64 +283,12 @@ const Welcome: React.FC<EmptyProps> = () => {
 
         
 
-        <div style={{ display: "none" }} className="demo-cards">
-          <TutorialMiniCard
-            title="Catch a star"
-            slug="chase"
-            screenshotBasename="screenshot.png"
-          >
-            <p>
-              In this introduction to coding in Pytch, you control a bird using
-              the keyboard, and your job is to catch the star.
-            </p>
-          </TutorialMiniCard>
 
-          <TutorialMiniCard
-            title="Boing"
-            slug="boing"
-            screenshotBasename="summary-screenshot.png"
-          >
-            <p>
-              In the game <i>Pong</i> from 1972, players hit a ball back and
-              forth. Our <i>Boing</i> game, adapted from one in{" "}
-              <a href="https://wireframe.raspberrypi.org/books/code-the-classics1">
-                Code the Classics
-              </a>
-              , lets you play against the computer.
-            </p>
-          </TutorialMiniCard>
+ 
+          <TutorialCarousel></TutorialCarousel>
+   
 
-          <TutorialMiniCard
-            title="Q*bert"
-            slug="qbert"
-            screenshotBasename="screenshot.png"
-          >
-            <p>
-              Jump around a pyramid of blocks, trying to change the whole stack
-              yellow without falling off! Our version is adapted from one in{" "}
-              <a href="https://wireframe.raspberrypi.org/issues/42">
-                Wireframe magazine
-              </a>
-              , inspired by the 1982 arcade classic.
-            </p>
-          </TutorialMiniCard>
 
-          <TutorialMiniCard
-            title="Splat the moles"
-            slug="splat-the-moles"
-            screenshotBasename="screenshot-w360.jpg" // bit random
-          >
-            <p>
-              A game where the player has to splat moles to score points. But if they miss, they lose all their points!
-            </p>
-          </TutorialMiniCard>
-        </div>
-        <div className="outer-container">
-          <div className="left-arrow">❬</div>
-          <div id="TutorialCarousel">Next</div>
-          <div className="right-arrow">❭</div>
-        </div>moo 
-        <TutorialCarousel></TutorialCarousel> cow
 
       </main>
         <section className="easy">
