@@ -94,6 +94,7 @@ const TutorialCarousel: React.FC<EmptyProps> = () => {
       } else if (direction === 'left') {
         handleArrowKeyPress({ key: 'ArrowLeft' });
         console.log(" left press! ");
+        console.log(cards);
       }
     };
   
@@ -122,10 +123,14 @@ const TutorialCarousel: React.FC<EmptyProps> = () => {
     return (
       <div id="TutorialCarousel">
         {/* Render cards based on window position and size */}
-        {cards.slice(windowPosition).concat(cards.slice(0, windowPosition)).map((card, index) => (
-          <div key={index}>{card.node}</div>
-        ))}
+        {cards
+      .slice(windowPosition)
+      .concat(cards.slice(0, windowPosition))
+      .map((card, index) => (
+        <div key={index}>{card}</div>
+      ))}
         {/* Your left and right arrow buttons go here */}
+        
   
         <div className="outer-container">
             <div className="left-arrow" onClick={() => handleArrowClick('left')}>&lt;</div>
