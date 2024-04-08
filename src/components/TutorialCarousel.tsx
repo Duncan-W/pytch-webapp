@@ -115,6 +115,9 @@ const TutorialCarousel: React.FC<EmptyProps> = () => {
       }
     };
 
+    // Call updateWindowSize once to set initial window size
+    updateWindowSize();
+
     window.addEventListener('resize', updateWindowSize);
 
     return () => {
@@ -129,8 +132,7 @@ const TutorialCarousel: React.FC<EmptyProps> = () => {
       <div id="TutorialCarousel">
         {/* Render cards based on window position and size */}
         {cards
-          .slice(windowPosition)
-          .concat(cards.slice(0, windowPosition))
+          .slice(windowPosition, windowPosition + currentWindowSize) // Adjust slice to only show the current window size
           .map((card, index) => card)}
       </div>
       <div className="right-arrow" onClick={() => handleArrowClick('right')}>&gt;</div>

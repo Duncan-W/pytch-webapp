@@ -146,7 +146,7 @@ const Welcome: React.FC<EmptyProps> = () => {
       hamburgerMenu.addEventListener("click", toggleNav);
     }
 
-
+    
 
 
 
