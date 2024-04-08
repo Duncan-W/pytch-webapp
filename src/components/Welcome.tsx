@@ -1,4 +1,4 @@
-import React, { useState,useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import NavBanner from "./NavBanner";
 import TutorialMiniCard from "./TutorialMiniCard";
 import TutorialCarousel from "./TutorialCarousel";
@@ -9,6 +9,53 @@ import { urlWithinApp } from "../env-utils";
 import { Link } from "./LinkWithinApp";
 import { useSetActiveUiVersionFun } from "./hooks/active-ui-version";
 import { EditorKindThumbnail } from "./EditorKindThumbnail";
+import { Modal, Button } from 'react-bootstrap'; // import necessary components from React Bootstrap
+
+
+
+function CodingJourneyModel() {
+  const [showModal, setShowModal] = useState(false); // state to manage modal visibility
+
+  const handleCloseModal = () => setShowModal(false); // function to close the modal
+  const handleShowModal = () => setShowModal(true); // function to show the modal
+
+  const videoUrl = urlWithinApp("/assets/Overview.mp4");
+  const launchCreate = useStoreActions(
+    (actions) => actions.userConfirmations.createProjectInteraction.launch
+  );
+  const showCreateModal = () => launchCreate();
+
+  return (
+    <>
+      <Button variant="primary" onClick={handleShowModal} style={{ zIndex: 0 }} className="rounded-button divider">
+        &gt;&gt;&gt; Start your <br /> coding journey
+      </Button>
+      <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>I want to...</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Link to="/tutorials/"><button className="square">
+            Start learning from basics with guided help and tutorials
+          </button></Link>
+          <button onClick={showCreateModal} className="square">
+            Start a new project and work on my own
+          </button>
+          {/*
+        <div class="square">
+           <p>View sample projects and learn from them</p>
+        </div>
+        */}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+}
 
 
 const ToggleUiStylePanel_v1: React.FC<EmptyProps> = () => {
@@ -146,7 +193,7 @@ const Welcome: React.FC<EmptyProps> = () => {
       hamburgerMenu.addEventListener("click", toggleNav);
     }
 
-    
+
 
 
 
@@ -222,11 +269,7 @@ const Welcome: React.FC<EmptyProps> = () => {
   const invadersUrl = urlWithinApp("/assets/invaders.png");
 
 
-  const videoUrl = urlWithinApp("/assets/Overview.mp4");
-  const launchCreate = useStoreActions(
-    (actions) => actions.userConfirmations.createProjectInteraction.launch
-  );
-  const showCreateModal = () => launchCreate();
+
 
 
 
@@ -242,6 +285,7 @@ const Welcome: React.FC<EmptyProps> = () => {
             It helps people to learn Python by building on skills they have developed
             in Scratch.
           </p>
+          <CodingJourneyModel></CodingJourneyModel>
         </section>
         <section className="subgrid-video">
           <div id="myBtn" aria-label="Video overview of Pytch">
@@ -281,117 +325,96 @@ const Welcome: React.FC<EmptyProps> = () => {
         <ToggleUiStylePanel />
 
 
-        
 
 
- 
-          <TutorialCarousel></TutorialCarousel>
-   
+
+
+        <TutorialCarousel></TutorialCarousel>
+
 
 
 
       </main>
-        <section className="easy">
-          <div className="section-heading">
-            <img src={logosUrl} alt="" className="section-logo" />
-            <h2>
-              Learn Python <br /> with Pytch<span role="presentation">_</span>
-            </h2>
+      <section className="easy">
+        <div className="section-heading">
+          <img src={logosUrl} alt="" className="section-logo" />
+          <h2>
+            Learn Python <br /> with Pytch<span role="presentation">_</span>
+          </h2>
+        </div>
+        <div className="section-content">
+          <div className="section-buttons">
+            <p>
+              Here you can see what the Pytch environment looks like - providing a
+              single screen where students can code, run their programs, and choose
+              resources from our media library.
+            </p>
           </div>
-          <div className="section-content">
-            <div className="section-buttons">
-              <p>
-                Here you can see what the Pytch environment looks like - providing a
-                single screen where students can code, run their programs, and choose
-                resources from our media library.
-              </p>
-            </div>
-            <div className="cbody">
-              <div className="cmain">
-                <div className="ccontentwrap">
-                  <div className="ccontent">
-                    <img className="ccont" src={invadersUrl} alt="" />
-                  </div>
+          <div className="cbody">
+            <div className="cmain">
+              <div className="ccontentwrap">
+                <div className="ccontent">
+                  <img className="ccont" src={invadersUrl} alt="" />
                 </div>
               </div>
-              <div className="cbottom"></div>
-              <div className="cleg"></div>
             </div>
+            <div className="cbottom"></div>
+            <div className="cleg"></div>
           </div>
-          <h2>Two ways of writing code</h2>
-          <div className="section-content">
-            <div>
-              <img
-                className="pytch_images"
-                src={pytchjrUrl}
-                width={512}
-                height={360}
-                alt="Pytch can be coded with script blocks"
-              />
-              <p>Script by script</p>
-            </div>
-            <div>
-              <img
-                className="pytch_images"
-                src={pytchUrl}
-                width={512}
-                height={360}
-                alt="Pytch can be coded as a single program"
-              />
-              <p>One big program</p>
-            </div>
-          </div>
-        </section>
-        <div className="section-buttons contact">
-          <span style={{ paddingLeft: "10%" }}>
-            <a className="mail" href="mailto:info@pytch.org">
-              ✉
-            </a>
-          </span>
-          <p className="large-text" style={{ paddingRight: "10%" }}>
-            Please email us at{" "}
-            <a style={{ color: "#000"}} href="mailto:info@pytch.org">
-              info@pytch.org
-            </a>{" "}
-            with any feedback or suggestions
-          </p>
         </div>
-<SiteFooter></SiteFooter>
-        <>
-          <div id="myModal" className="i_cant_believe_its_not_modal">
-            {/* Modal content */}
-            <div className="i_cant_believe_its_not_modal-content">
-              <button aria-label="Close" className="close">
-                ×
-              </button>
-              <video className="ccont" controls data-toggle="lightbox">
-                <source src={videoUrl} type="video/mp4" />
-              </video>
-            </div>
+        <h2>Two ways of writing code</h2>
+        <div className="section-content">
+          <div>
+            <img
+              className="pytch_images"
+              src={pytchjrUrl}
+              width={512}
+              height={360}
+              alt="Pytch can be coded with script blocks"
+            />
+            <p>Script by script</p>
           </div>
-          <div id="myModal1" className="i_cant_believe_its_not_modal">
-            {/* Modal content */}
-            <h1 id="myModal1_header"> I want to ... </h1>
-            <div className="i_cant_believe_its_not_modal-content">
-              <button aria-label="Close" className="close">
-                ×
-              </button>
-              <div style={{ display: "flex" }}>
-                <Link to="/tutorials/"><button className="square">
-                  Start learning from basics with guided help and tutorials
-                </button></Link>
-                <button onClick={showCreateModal} className="square">
-                  Start a new project and work on my own
-                </button>
-                {/*
-        <div class="square">
-           <p>View sample projects and learn from them</p>
+          <div>
+            <img
+              className="pytch_images"
+              src={pytchUrl}
+              width={512}
+              height={360}
+              alt="Pytch can be coded as a single program"
+            />
+            <p>One big program</p>
+          </div>
         </div>
-        */}
-              </div>
-            </div>
+      </section>
+      <div className="section-buttons contact">
+        <span style={{ paddingLeft: "10%" }}>
+          <a className="mail" href="mailto:info@pytch.org">
+            ✉
+          </a>
+        </span>
+        <p className="large-text" style={{ paddingRight: "10%" }}>
+          Please email us at{" "}
+          <a style={{ color: "#000" }} href="mailto:info@pytch.org">
+            info@pytch.org
+          </a>{" "}
+          with any feedback or suggestions
+        </p>
+      </div>
+      <SiteFooter></SiteFooter>
+      <>
+        <div id="myModal" className="i_cant_believe_its_not_modal">
+          {/* Modal content */}
+          <div className="i_cant_believe_its_not_modal-content">
+            <button aria-label="Close" className="close">
+              ×
+            </button>
+            <video className="ccont" controls data-toggle="lightbox">
+              <source type="video/mp4" />
+            </video>
           </div>
-        </>
+        </div>
+
+      </>
     </div>
 
   );
