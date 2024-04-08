@@ -35,9 +35,9 @@ function CodingJourneyModel() {
           <Modal.Title>I want to...</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Link to="/tutorials/"><button className="square">
+        <button className="square" onClick={() => window.location.href = './tutorials'}> 
             Start learning from basics with guided help and tutorials
-          </button></Link>
+            </button>
           <button onClick={showCreateModal} className="square">
             Start a new project and work on my own
           </button>
@@ -197,58 +197,6 @@ const Welcome: React.FC<EmptyProps> = () => {
 
 
 
-    // Get references to both modals and buttons. If we have more than 2 this should be changed.
-    let modal = document.getElementById("myModal");
-    let modal1 = document.getElementById("myModal1");
-
-
-    // Get references to both buttons
-    let btn = document.getElementById("myBtn");
-    let btn1 = document.getElementById("myBtn1");
-
-    // Get references to close buttons for both modals
-    let closeButtons = document.querySelectorAll('.close');
-
-    // Function to open the modal
-    function openModal(modal) {
-      modal.style.display = "block";
-    }
-
-    // Function to close the modal
-    function closeModal(modal) {
-      modal.style.display = "none";
-    }
-
-    // Add event listeners to buttons to open modals
-    btn.addEventListener("click", function () {
-      openModal(modal);
-    });
-
-    btn1.addEventListener("click", function () {
-      openModal(modal1);
-    });
-
-
-
-    // Add click event listener to each close button
-    closeButtons.forEach(function (button) {
-      button.addEventListener('click', function () {
-        // Run the provided code when the close button is clicked
-        modal.style.display = "none";
-        modal1.style.display = "none";
-      });
-    });
-
-    // Close modals when clicking outside
-    document.addEventListener("click", function (event) {
-      if (event.target === modal) {
-        console.log(event);
-      } else if (event.target === modal1) {
-        closeModal(modal1);
-      }
-    });
-
-
 
 
     return () => {
@@ -285,7 +233,6 @@ const Welcome: React.FC<EmptyProps> = () => {
             It helps people to learn Python by building on skills they have developed
             in Scratch.
           </p>
-          <CodingJourneyModel></CodingJourneyModel>
         </section>
         <section className="subgrid-video">
           <div id="myBtn" aria-label="Video overview of Pytch">
@@ -318,18 +265,11 @@ const Welcome: React.FC<EmptyProps> = () => {
         </section>
 
       </header>
-      <button id="myBtn1" style={{ zIndex: 0 }} className="rounded-button divider">
-        &gt;&gt;&gt; Start your <br /> coding journey
-      </button>
+      <CodingJourneyModel />
       <main>
         <ToggleUiStylePanel />
 
-
-
-
-
-
-        <TutorialCarousel></TutorialCarousel>
+        <TutorialCarousel />
 
 
 

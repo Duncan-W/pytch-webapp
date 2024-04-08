@@ -137,6 +137,7 @@ $border-color_1: transparent transparent transparent $pytch-colour-accent-pink;
  	font-size: larger;
  	text-align: center;
  	padding: 5px;
+	width: 100%;
 
  	&:hover {
  		filter: brightness(1.15);
@@ -1001,7 +1002,7 @@ $border-color_1: transparent transparent transparent $pytch-colour-accent-pink;
 			
 			img {
 				width: 80vw;
-				max-width: 60%;
+				max-width: 50%;
 				margin-bottom: -10vh;
 			}
 		}
