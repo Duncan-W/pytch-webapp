@@ -1003,8 +1003,11 @@ header {
 		   img {
 			   width: 80vw;
 			   max-width: 50%;
-			   margin-bottom: -10vh;
+			   
 		   }
+		   img:last-child {
+			margin-bottom: -10px;
+		  }
 	   }
 	}
 
