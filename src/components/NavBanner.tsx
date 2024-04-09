@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { envVarOrFail, withinSite } from "../env-utils";
+import {withinSite } from "../env-utils";
 import { Link } from "./LinkWithinApp";
 
 
@@ -23,7 +23,7 @@ const NavBanner = () => {
         hamburgerMenu.removeEventListener("click", toggleNav);
       }
     };
-  }, []); // runs only once on mount
+  }, []); // run only once on mount
 
 
   return (

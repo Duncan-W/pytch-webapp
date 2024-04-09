@@ -1,16 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import NavBanner from "./NavBanner";
-import TutorialMiniCard from "./TutorialMiniCard";
 import TutorialCarousel from "./TutorialCarousel";
 import SiteFooter from "./SiteFooter";
 import { EmptyProps, assertNever } from "../utils";
 import { useStoreActions, useStoreState } from "../store";
 import { urlWithinApp } from "../env-utils";
-import { Link } from "./LinkWithinApp";
 import { useSetActiveUiVersionFun } from "./hooks/active-ui-version";
 import { EditorKindThumbnail } from "./EditorKindThumbnail";
 import { Modal, Button } from 'react-bootstrap';
-
 
 
 
@@ -243,21 +240,12 @@ const Welcome: React.FC<EmptyProps> = () => {
 
   useEffect(() => {
     document.title = "Pytch";
-
-
-
-
   });
 
   const logosUrl = urlWithinApp("/assets/Icon-02.png");
   const pytchUrl = urlWithinApp("/assets/normal-editor-preview-1024x693.png");
   const pytchjrUrl = urlWithinApp("/assets/script-by-script-preview-1-1024x693.png");
   const invadersUrl = urlWithinApp("/assets/invaders.png");
-
-
-
-
-
 
   return (
 
