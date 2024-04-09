@@ -1,38 +1,7 @@
-$color_1: white;
-$pytch-colour-main-yellow: #fff792;
-$color_3: #aaaaaa;
-$color_4: #000;
-$color_5: #aaa;
-$color_7: #ff44b0;
-$color_9: #D5D7DB;
-$grey_1: rgb(114, 114, 114);
-$grey_2: rgb(197, 197, 197);
-$grey_3: rgb(218, 218, 218);
-$font-family_1: 'Hanken Grotesk', sans-serif;
-$font-family_2: 'Roboto', sans-serif;
-$font-family_3: "IBM Plex Sans", Helvetica, Arial, sans-serif;
-$pytch-colour-main-blue: #306998;
-$background-color_2: transparent;
-$background-color_3: rgb(0, 0, 0);
-$background-color_4: rgba(0, 0, 0, 0.4);
-$background-color_5: #fefefe;
-$background-color_6: #44b;
-$background-color_7: #fff;
-$background-color_10: #00b5b0;
-$background-color_12: rgba(76, 76, 76, 0.42);
-$background-color_13: #3f6796;
-$background-color_14: #a234ff;
-$background-color_15: #ff44b0;
-$background-color_16: #dc1d8c;
-$background-color_17: #f8f8f8;
-$border-color_1: transparent transparent transparent #ff44b0;
-$border-left-color_1: #0585e8;
+@import "./pytch-variables.scss";
 
-nav {
-	border: 0;
-	margin: 0;
-	padding: 0;
-}
+
+
 
 .ToggleUiStylePanel {
 	max-width: 36rem;
@@ -305,113 +274,6 @@ footer {
 	}
 }
 
-nav {
-	background-color: $pytch-colour-main-blue;
-	border-bottom: 0.3rem solid $pytch-colour-main-yellow;
-	grid-area: nav;
-	color: $color_1;
-	padding: 4px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	margin: 0px;
-
-	a {
-		color: $pytch-colour-main-yellow !important;
-		transition: color 0.22s ease-out;
-		text-decoration: none;
-	}
-
-	.title-and-version {
-		h1 {
-			display: inline-block;
-			margin-right: 0;
-		}
-
-		.h1 {
-			display: inline-block;
-			margin-right: 0;
-		}
-
-		p.version-tag {
-			display: inline-block;
-			font-size: .875rem;
-			margin-bottom: 0;
-			margin-left: 6px;
-
-			a {
-				color: $color_5;
-			}
-		}
-	}
-
-	h1 {
-		padding: 8px;
-		margin: 0px 2rem;
-		font-size: 1.5rem;
-		font-weight: 700;
-		color: $color_1;
-
-		&:hover {
-			background-color: $background-color_6;
-			border-radius: 4px;
-		}
-	}
-
-	.h1 {
-		padding: 8px;
-		margin: 0px 2rem;
-		font-size: 1.5rem;
-		font-weight: 700;
-		color: $color_1;
-
-		&:hover {
-			background-color: $background-color_6;
-			border-radius: 4px;
-		}
-	}
-
-	li {
-		&:hover {
-			background-color: $background-color_6;
-			border-radius: 4px;
-		}
-	}
-
-	ul {
-		margin: 0;
-
-		li {
-			display: inline-block;
-			margin-right: 2rem;
-			padding: 8px;
-			font-size: 1.25rem;
-			color: $color_1;
-			cursor: pointer;
-			-webkit-user-select: none;
-			user-select: none;
-
-			a {
-				color: $color_1;
-			}
-		}
-	}
-}
-
-.hamburger-menu {
-	z-index: 9;
-	display: none;
-	flex-direction: column;
-	cursor: pointer;
-
-	div {
-		width: 30px;
-		height: 3px;
-		background-color: $background-color_7;
-		margin: 6px 0;
-	}
-}
 
 .container {
 	display: grid;
@@ -620,8 +482,6 @@ header {
 	}
 }
 
-
-
 .section-images {
 	margin-top: 20px;
 	display: flex;
@@ -793,7 +653,7 @@ header {
 		color: $color_4;
 		font-weight: 400;
 		line-height: 1.75;
-		background-color: $background-color_17 !important;
+		background-color: $main-bg-color !important;
 		font-size: 16px;
 	}
 
@@ -849,11 +709,7 @@ header {
 
 
 
-@media screen and (max-width: 1068px) {
-	.version-tag {
-		display: none;
-	}
-}
+
 
 @media (max-width: 968px) {
 	.easy {
@@ -980,37 +836,7 @@ header {
 	}
 }
 
-@media screen and (max-width: 640px) {
-	nav {
-		ul {
-			display: none;
-			flex-direction: column;
-			position: absolute;
-			top: 50px;
-			left: 0px;
-			width: 100%;
-			background-color: $pytch-colour-main-blue;
-			z-index: 1;
-			border-radius: 3px;
 
-			li {
-				margin: 0;
-				padding: 10px;
-				text-align: center;
-				width: 100%;
-			}
-		}
-
-		ul.show {
-			display: flex;
-		}
-	}
-
-	.hamburger-menu {
-		display: flex;
-		padding-right: 15px;
-	}
-}
 
 
 

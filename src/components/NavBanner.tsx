@@ -13,9 +13,9 @@ const NavBanner = () => {
             Pytch
           </a>
         </h1>
-        <a className="version-tag" href={withinSite("/doc/releases/changelog.html")}>
+        {/* {<a className="version-tag" href={withinSite("/doc/releases/changelog.html")}>
           v2.0.0
-        </a>
+        </a>} */}
       </div>
       <div
         className="hamburger-menu"

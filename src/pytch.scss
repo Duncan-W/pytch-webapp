@@ -45,166 +45,148 @@ code {
   overflow-y: auto;
 }
 
-.NavBar {
-  background-color: $pytch-colour-main-blue;
-  color: white;
-  padding: 4px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  .title-and-version {
-    h1 {
-      display: inline-block;
-      margin-right: 0px;
-      span.beta-tag {
-        margin-left: 0.625rem;
-        font-size: 1rem;
-      }
-    }
-    p.version-tag {
-      display: inline-block;
-      font-size: 0.875rem;
-      margin-bottom: 0px;
-      margin-left: 6px;
-      a {
-        color: #aaa;
-      }
-    }
-  }
-  h1 {
-    padding: 8px;
-    margin: 0px 2rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-  }
-  h1:hover,
-  li:hover {
-    color: $pytch-colour-main-yellow;
-  }
-  ul {
-    margin: 0px;
-    li {
-      display: inline-block;
-      margin-right: 2rem;
-      padding: 8px;
-      font-size: 1.25rem;
-      color: white;
-      cursor: pointer;
-      user-select: none;
-      a {
-        color: white;
-      }
-    }
-  }
+
+nav {
+	border: 0;
+	margin: 0;
+	background-color: $pytch-colour-main-blue;
+	border-bottom: 0.3rem solid $pytch-colour-main-yellow;
+	grid-area: nav;
+	color: $color_1;
+	padding: 4px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	a {
+		color: $pytch-colour-main-yellow !important;
+		transition: color 0.22s ease-out;
+		text-decoration: none;
+	}
+
+	.title-and-version {
+		h1 {
+			display: inline-block;
+			margin-right: 0;
+		}
+
+		.h1 {
+			display: inline-block;
+			margin-right: 0;
+		}
+
+		p.version-tag {
+			display: inline-block;
+			font-size: .875rem;
+			margin-bottom: 0;
+			margin-left: 6px;
+
+			a {
+				color: $color_5;
+			}
+		}
+	}
+
+	h1 {
+		padding: 8px;
+		margin: 0px 2rem;
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: $color_1;
+
+		&:hover {
+			background-color: $background-color_6;
+			border-radius: 4px;
+		}
+	}
+
+	.h1 {
+		padding: 8px;
+		margin: 0px 2rem;
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: $color_1;
+
+		&:hover {
+			background-color: $background-color_6;
+			border-radius: 4px;
+		}
+	}
+
+	li {
+		&:hover {
+			background-color: $background-color_6;
+			border-radius: 4px;
+		}
+	}
+
+	ul {
+		margin: 0;
+
+		li {
+			display: inline-block;
+			margin-right: 2rem;
+			padding: 8px;
+			font-size: 1.25rem;
+			color: $color_1;
+			cursor: pointer;
+			-webkit-user-select: none;
+			user-select: none;
+
+			a {
+				color: $color_1;
+			}
+		}
+	}
 }
 
-.welcome-text {
-  font-size: 110%;
-  margin: 2rem 6rem;
+.hamburger-menu {
+	z-index: 9;
+	display: none;
+	flex-direction: column;
+	cursor: pointer;
 
-  .ToggleUiStylePanel {
-    max-width: 36rem;
-    padding: map.get($spacers, 4);
-    margin: auto;
-    background-color: white;
-    border-radius: 4px;
-    border: 1px solid $pytch-colour-main-blue;
-
-    > .summary {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      align-items: center;
-    }
-
-    > .explanation {
-      margin-top: map.get($spacers, 3);
-    }
-
-    p:last-child {
-      margin-bottom: 0px;
-    }
-
-    .pseudo-link {
-      @include pytch-colours-hover();
-    }
-
-    .welcome-change-ui-style {
-      text-align: center;
-    }
-  }
-
-  h1 {
-    margin: 1.5rem 0rem;
-  }
-
-  .bridge-text-wrapper {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  .bridge-text {
-    max-width: 48rem;
-    margin: 2rem 3rem 1rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    p {
-      text-align: justify;
-      margin: 0.5rem 3rem;
-
-      &.contact-email {
-        font-size: 1.125rem;
-        text-align: center;
-      }
-    }
-  }
-
-  .demo-cards {
-    margin-bottom: 3rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-
-  h2 {
-    margin: 3.5rem 0rem 1.5rem;
-  }
-
-  .way-of-using-pytch {
-    margin: 2rem 3rem;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    .button-wrapper {
-      flex-shrink: 0;
-      flex-grow: 0;
-      width: 12rem;
-      text-align: center;
-    }
-
-    p {
-      margin: 0rem;
-      flex-grow: 1;
-    }
-  }
-
-  .logo-strip {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-evenly;
-    img {
-      padding: 2rem 1rem;
-    }
-  }
+	div {
+		width: 30px;
+		height: 3px;
+		background-color: $background-color_7;
+		margin: 6px 0;
+	}
 }
+
+@media screen and (max-width: 640px) {
+	nav {
+		ul {
+			display: none;
+			flex-direction: column;
+			position: absolute;
+			top: 50px;
+			left: 0px;
+			width: 100%;
+			background-color: $pytch-colour-main-blue;
+			z-index: 1;
+			border-radius: 3px;
+
+			li {
+				margin: 0;
+				padding: 10px;
+				text-align: center;
+				width: 100%;
+			}
+		}
+
+		ul.show {
+			display: flex;
+		}
+	}
+
+	.hamburger-menu {
+		display: flex;
+		padding-right: 15px;
+	}
+}
+
 
 .unknown-route {
   max-width: 36rem;
