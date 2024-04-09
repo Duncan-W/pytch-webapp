@@ -620,15 +620,7 @@ header {
 	}
 }
 
-.left-button {
-	font-size: 16px;
-}
 
-.right-buttons {
-	button {
-		font-size: 14px;
-	}
-}
 
 .section-images {
 	margin-top: 20px;
@@ -823,27 +815,78 @@ header {
 	}
 }
 
+@media only screen and (min-width: 768px) {
+	body {
+		font-size: 15px;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	body {
+		font-size: 16px;
+
+		&:hover {
+			&:after {
+				cursor: pointer;
+			}
+		}
+
+		&:after {
+			position: absolute;
+			display: block;
+			content: '';
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background: rgba(0, 0, 0, 0.7);
+			transition: opacity 0.22s ease-out;
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+}
+
+
+
 @media screen and (max-width: 1068px) {
 	.version-tag {
 		display: none;
 	}
 }
 
-@media screen and (max-width: 668px) {
-	.version-tag {
-		display: inline;
+@media (max-width: 968px) {
+	.easy {
+		flex-direction: column;
 	}
 
-	.hamburger-menu {
-		margin-left: 10vw;
-		margin-right: auto !important;
+	.section-content {
+		flex-direction: column;
+
+		img {
+			margin: auto;
+			max-width: 80%;
+			margin-top: -5vh;
+		}
+	}
+
+	.sitemap {
+		flex-direction: column;
+	}
+
+	.cbody {
+		margin-left: 15%;
+		margin-bottom: 35vh;
+	}
+
+	.ccont {
+		max-width: 70%;
+		margin-right: 20%;
 	}
 }
 
+
 @media screen and (max-width: 768px) {
-	header {
-		height: 600px !important;
-	}
 
 	.square {
 		font-size: medium;
@@ -859,6 +902,81 @@ header {
 
 	.rounded-button {
 		margin-left: 10vw;
+	}
+
+	header {
+		grid-template-columns: 1fr;
+		height: 600px !important;
+		min-height: 140vh !important;
+
+		section {
+			padding-left: 0vw;
+
+			p {
+				padding: 10px;
+			}
+		}
+	}
+
+	.text-wrap {
+		display: none;
+		height: 0px;
+	}
+
+	.divider {
+		margin-top: 0%;
+	}
+
+	.image-text {
+		font-size: 150%;
+		width: 400px;
+		min-width: 60vw;
+		max-width: 90vw;
+		text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+		filter: drop-shadow(-1px 0px 0px $color_4);
+	}
+}
+
+
+@media screen and (max-width: 668px) {
+	.version-tag {
+		display: inline;
+	}
+
+	.hamburger-menu {
+		margin-left: 10vw;
+		margin-right: auto !important;
+	}
+
+	footer {
+		.section-content {
+			flex-direction: column;
+		}
+
+		.section-images {
+			flex-direction: column;
+			margin-bottom: -70px;
+			/* ^ a bit of a hack*/
+			gap: 2px;
+
+			img {
+				width: 80vw;
+				max-width: 50%;
+
+			}
+
+			img:last-child {
+				margin-bottom: -10px;
+			}
+		}
+	}
+
+	.sitemap {
+		flex-direction: column;
+	}
+
+	.section-content {
+		margin-bottom: 100px;
 	}
 }
 
@@ -894,134 +1012,7 @@ header {
 	}
 }
 
-@media only screen and (max-width: 768px) {
-	header {
-		grid-template-columns: 1fr;
-		height: 450px;
-		min-height: 140vh !important;
 
-		section {
-			padding-left: 0vw;
-
-			p {
-				padding: 10px;
-			}
-		}
-	}
-
-	.text-wrap {
-		display: none;
-		height: 0px;
-	}
-
-	.divider {
-		margin-top: 0%;
-	}
-
-	.image-text {
-		font-size: 150%;
-		width: 400px;
-		min-width: 60vw;
-		max-width: 90vw;
-		text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
-		filter: drop-shadow(-1px 0px 0px $color_4);
-	}
-}
-
-@media only screen and (min-width: 768px) {
-	body {
-		font-size: 15px;
-	}
-}
-
-@media only screen and (min-width: 1024px) {
-	body {
-		font-size: 16px;
-
-		&:hover {
-			&:after {
-				cursor: pointer;
-			}
-		}
-
-		&:after {
-			position: absolute;
-			display: block;
-			content: '';
-			width: 100%;
-			height: 100%;
-			left: 0;
-			top: 0;
-			background: rgba(0, 0, 0, 0.7);
-			transition: opacity 0.22s ease-out;
-			opacity: 0;
-			visibility: hidden;
-		}
-	}
-}
-
-@media (max-width: 968px) {
-	.easy {
-		flex-direction: column;
-	}
-
-	.section-content {
-		flex-direction: column;
-
-		img {
-			margin: auto;
-			max-width: 80%;
-			margin-top: -5vh;
-		}
-	}
-
-	.sitemap {
-		flex-direction: column;
-	}
-
-	.cbody {
-		margin-left: 15%;
-		margin-bottom: 35vh;
-	}
-
-	.ccont {
-		max-width: 70%;
-		margin-right: 20%;
-	}
-}
-
-@media (max-width: 668px) {
-	footer {
-		.section-content {
-			flex-direction: column;
-		}
-
-		.section-images {
-			flex-direction: column;
-			margin-bottom: -70px;
-			/* ^ a bit of a hack*/
-			gap: 2px;
-
-			img {
-				width: 80vw;
-				max-width: 50%;
-
-			}
-
-			img:last-child {
-				margin-bottom: -10px;
-			}
-		}
-	}
-
-	.sitemap {
-		flex-direction: column;
-	}
-
-	.section-content {
-		margin-bottom: 100px;
-	}
-}
 
 @media (max-width: 300px) {
 	.ccont {
