@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect} from "react";
 import NavBanner from "./NavBanner";
 import TutorialCarousel from "./TutorialCarousel";
 import SiteFooter from "./SiteFooter";
@@ -13,10 +13,8 @@ import { Modal, Button } from 'react-bootstrap';
 
 function CodingJourneyModel() {
   const [showModal, setShowModal] = useState(false);
-
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
-
   const launchCreate = useStoreActions(
     (actions) => actions.userConfirmations.createProjectInteraction.launch
   );
@@ -94,7 +92,6 @@ function OverviewModel() {
 
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-
         </Modal.Header>
         <Modal.Body>
           <video className="w-100" controls loop>
@@ -171,11 +168,7 @@ const ToggleUiStylePanel_v2: React.FC<EmptyProps> = () => {
     setOperationState("idle");
   };
 
-
-
-
-
-
+  
   return (
     <div className="ToggleUiStylePanel">
       <div className="summary">
@@ -260,17 +253,18 @@ const Welcome: React.FC<EmptyProps> = () => {
             in Scratch.
           </p>
         </section>
+
         <OverviewModel />
 
       </header>
+
       <CodingJourneyModel />
+      
       <main>
+
         <ToggleUiStylePanel />
 
         <TutorialCarousel />
-
-
-
 
       </main>
       <section className="easy">
@@ -339,20 +333,6 @@ const Welcome: React.FC<EmptyProps> = () => {
         </p>
       </div>
       <SiteFooter></SiteFooter>
-      <>
-        <div id="myModal" className="i_cant_believe_its_not_modal">
-          {/* Modal content */}
-          <div className="i_cant_believe_its_not_modal-content">
-            <button aria-label="Close" className="close">
-              ×
-            </button>
-            <video className="ccont" controls data-toggle="lightbox">
-              <source type="video/mp4" />
-            </video>
-          </div>
-        </div>
-
-      </>
     </div>
 
   );
