@@ -1,13 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
-import NavBanner from "./NavBanner";
+import React, { useState, useEffect} from "react";
 import TutorialMiniCard from "./TutorialMiniCard";
-import SiteFooter from "./SiteFooter";
 import { EmptyProps, assertNever } from "../utils";
-import { useStoreActions, useStoreState } from "../store";
-import { urlWithinApp } from "../env-utils";
-import { Link } from "./LinkWithinApp";
-import { useSetActiveUiVersionFun } from "./hooks/active-ui-version";
-import { EditorKindThumbnail } from "./EditorKindThumbnail";
+
 
 
 
@@ -80,21 +74,24 @@ const TutorialCarousel: React.FC<EmptyProps> = () => {
   );
 
 
-  const handleArrowKeyPress = (event) => {
+  const handleArrowKeyPress = (event:any) => {
     if (event.key === 'ArrowLeft') {
+      const prevPosition = windowPosition; // Get the previous position
+      console.log('Previous position:', prevPosition); // Log the previous position
       setWindowPosition((prevPosition) => (prevPosition - 1 + cards.length) % cards.length);
     } else if (event.key === 'ArrowRight') {
       setWindowPosition((prevPosition) => (prevPosition + 1) % cards.length);
     }
   };
-
-  const handleArrowClick = (direction) => {
+  
+  const handleArrowClick = (direction:String) => {
     if (direction === 'right') {
       handleArrowKeyPress({ key: 'ArrowRight' });
     } else if (direction === 'left') {
       handleArrowKeyPress({ key: 'ArrowLeft' });
       console.log(" left press! ");
       console.log(cards);
+
     }
   };
 
@@ -123,7 +120,7 @@ const TutorialCarousel: React.FC<EmptyProps> = () => {
     return () => {
       window.removeEventListener('resize', updateWindowSize);
     };
-  }, []); // Empty dependency array, as we don't depend on any props or state
+  }, []); 
 
   return (
 
