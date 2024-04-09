@@ -35,9 +35,9 @@ function CodingJourneyModel() {
           <Modal.Title>I want to...</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        <button className="square" onClick={() => window.location.href = './tutorials'}> 
+          <button className="square" onClick={() => window.location.href = './tutorials'}>
             Start learning from basics with guided help and tutorials
-            </button>
+          </button>
           <button onClick={showCreateModal} className="square">
             Start a new project and work on my own
           </button>
