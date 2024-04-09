@@ -312,7 +312,7 @@ const Welcome: React.FC<EmptyProps> = () => {
               height={360}
               alt="Pytch can be coded with script blocks"
             />
-            <p>Script by script</p>
+            <p className="caption">Script by script</p>
           </div>
           <div>
             <img
@@ -322,7 +322,7 @@ const Welcome: React.FC<EmptyProps> = () => {
               height={360}
               alt="Pytch can be coded as a single program"
             />
-            <p>One big program</p>
+            <p className="caption">One big program</p>
           </div>
         </div>
       </section>
