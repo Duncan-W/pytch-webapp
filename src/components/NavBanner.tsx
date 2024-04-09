@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import { envVarOrFail, withinSite } from "../env-utils";
 import { Link } from "./LinkWithinApp";
-import { pytchResearchSiteUrl } from "../constants";
+
 
 const NavBanner = () => {
-  const versionTag = envVarOrFail("VITE_VERSION_TAG");
+
+  useEffect(() => {
+    function toggleNav() {
+      const navUl = document.querySelector("nav ul");
+      if (navUl) {
+        navUl.classList.toggle("show");
+      }
+    }
+
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+    if (hamburgerMenu) {
+      hamburgerMenu.addEventListener("click", toggleNav);
+    }
+
+    return () => {
+      if (hamburgerMenu) {
+        hamburgerMenu.removeEventListener("click", toggleNav);
+      }
+    };
+  }, []); // runs only once on mount
+
+
   return (
     <nav>
       <div className="title-and-version">
@@ -22,7 +43,7 @@ const NavBanner = () => {
 
         aria-label="click here for navigation menu"
       >
-        <div />
+        <div /> {/*<!-- This produces the horizontal bars -->*/}
         <div />
         <div />
       </div>
@@ -42,7 +63,7 @@ const NavBanner = () => {
 
         <li><Link to="/my-projects/">My projects</Link></li>
 
-        <li className="mail">✉</li>
+        <li className="mail">&#x2709;</li>
       </ul>
     </nav>
 

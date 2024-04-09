@@ -244,29 +244,6 @@ const Welcome: React.FC<EmptyProps> = () => {
   useEffect(() => {
     document.title = "Pytch";
 
-    function toggleNav() {
-      const navUl = document.querySelector("nav ul");
-      navUl.classList.toggle("show");
-    }
-
-    const hamburgerMenu = document.querySelector(".hamburger-menu");
-    if (hamburgerMenu) {
-      hamburgerMenu.addEventListener("click", toggleNav);
-    }
-
-
-
-
-
-
-
-    return () => {
-      if (hamburgerMenu) {
-        hamburgerMenu.removeEventListener("click", toggleNav);
-      }
-    };
-
-
 
 
 
