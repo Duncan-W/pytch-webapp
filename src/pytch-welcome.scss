@@ -35,20 +35,7 @@
 }
 
 
-/*
-$color_1: $main-bg-color;
-$color_2: $pytch-colour-main-yellow;
-$color_7: $pytch-colour-accent-pink;
-$background-color_10: $pytch-colour-accent-cyan;
-$background-color_15: $pytch-colour-accent-pink;
-$background-color_17: $main-bg-color;
-$border-color_1: transparent transparent transparent $pytch-colour-accent-pink;
-*/
 
-
-
-
-/* font data should really go in pytch.scss */
 
 
 
@@ -809,9 +796,10 @@ header {
 		max-width: 80% !important;
 		margin-right: 18% !important;
 	}
-	.section-content{
+
+	.section-content {
 		.caption {
-			margin-top:-5rem;
+			margin-top: -5rem;
 		}
 	}
 }
