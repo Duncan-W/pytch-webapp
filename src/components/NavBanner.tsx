@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {withinSite } from "../env-utils";
+import { envVarOrFail, withinSite } from "../env-utils";
 import { Link } from "./LinkWithinApp";
 
 

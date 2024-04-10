@@ -8,7 +8,7 @@
 	padding: 1rem;
 	margin: auto;
 	margin-bottom: 2rem;
-	background-color: $background-color_7;
+	background-color: $color_1;
 	border-radius: 4px;
 	border: 1px solid $color_1;
 	font-size: 120%;
@@ -33,11 +33,6 @@
 		color: $pytch-colour-main-blue;
 	}
 }
-
-
-
-
-
 
 .sitemap {
 	display: flex;
@@ -72,7 +67,7 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	text-shadow: 2px 2px 2px $color_4;
+	text-shadow: 2px 2px 2px $color_0;
 
 	&:hover {
 		filter: brightness(80%);
@@ -98,7 +93,7 @@
 }
 
 #play_button {
-	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+	filter: drop-shadow(0 0 5px $background-half-fade);
 	transition: filter 0.3s ease-in-out;
 	cursor: pointer;
 
@@ -113,7 +108,7 @@
 		width: 200px;
 		margin: auto;
 		display: block;
-		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+		box-shadow: 0 2px 4px $background-half-fade;
 		filter: drop-shadow(5px 5px 5px #222);
 		max-width: 200px;
 		cursor: pointer;
@@ -199,13 +194,13 @@
 	font-weight: bold;
 
 	&:hover {
-		color: $color_4;
+		color: $color_0;
 		text-decoration: none;
 		cursor: pointer;
 	}
 
 	&:focus {
-		color: $color_4;
+		color: $color_0;
 		text-decoration: none;
 		cursor: pointer;
 	}
@@ -262,7 +257,7 @@ header {
 	max-width: 100vw;
 
 	.mail {
-		color: $color_4 !important;
+		color: $color_0 !important;
 		font-size: 5rem;
 	}
 }
@@ -280,7 +275,7 @@ header {
 	max-width: 100vw;
 	text-align: center;
 	padding: 10px;
-	background-color: $background-color_10;
+	background-color: $pytch-colour-accent-cyan;
 	color: $color_1;
 	border-top: 1.5px solid$pytch-colour-main-blue;
 	border-bottom: 1.5px solid$pytch-colour-main-blue;
@@ -337,7 +332,7 @@ header {
 	height: 14rem;
 	border-top-right-radius: 1.25rem;
 	border-top-left-radius: 1.25rem;
-	background-color: $background-color_3;
+	background-color: $color_0;
 	overflow: hidden;
 }
 
@@ -464,7 +459,7 @@ header {
 	padding: 7px 15px;
 	border: none;
 	border-radius: 10px;
-	background-color: $background-color_15;
+	background-color: $pytch-colour-accent-pink;
 	color: $color_1;
 	text-align: center;
 	text-decoration: none;
@@ -496,7 +491,7 @@ header {
 	border-top-left-radius: 7px;
 	border-bottom-left-radius: 7px;
 	background: transparent;
-	color: $color_7;
+	color: $pytch-colour-accent-pink;
 	font-size: 18px;
 
 	&::after {
@@ -602,7 +597,7 @@ header {
 		height: 100vh;
 		overflow-x: hidden;
 		-webkit-overflow-scrolling: touch;
-		color: $color_4;
+		color: $color_0;
 		font-weight: 400;
 		line-height: 1.75;
 		background-color: $main-bg-color !important;
@@ -740,7 +735,7 @@ header {
 		min-width: 60vw;
 		max-width: 90vw;
 		text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
-		filter: drop-shadow(-1px 0px 0px $color_4);
+		filter: drop-shadow(-1px 0px 0px $color_0);
 	}
 }
 
