@@ -246,7 +246,7 @@ const Welcome: React.FC<EmptyProps> = () => {
       <NavBanner />
       <header>
         <section>
-          <h1>Welcome to Pytch!</h1>
+          <h2>Welcome to Pytch!</h2>
           <p>Pytch is a bridge from Scratch to Python.</p>
           <p>
             It helps people to learn Python by building on skills they have developed

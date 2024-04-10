@@ -583,7 +583,6 @@ header {
 	}
 
 
-
 	main {
 		grid-area: main;
 		padding: 2%;
@@ -695,11 +694,6 @@ header {
 		height: auto;
 		margin: 10px 0;
 		border: 1px solid $color_1;
-	}
-
-	.i_cant_believe_its_not_modal-content {
-		width: 90% !important;
-		overflow: hidden !important;
 	}
 
 	.rounded-button {

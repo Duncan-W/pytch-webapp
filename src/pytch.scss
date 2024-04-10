@@ -16,7 +16,7 @@
 
 body.pytch-toplevel {
   // Use (older version of) Bootstrap's "reboot" font choice for now.
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  font-family: $font-family_1, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   -webkit-font-smoothing: antialiased;
@@ -50,6 +50,7 @@ code {
 nav {
 	border: 0;
 	margin: 0;
+  font-family: $font-family_1;
 	background-color: $pytch-colour-main-blue;
 	border-bottom: 0.3rem solid $pytch-colour-main-yellow;
 	grid-area: nav;
