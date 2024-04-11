@@ -184,7 +184,10 @@ nav {
 
 	.hamburger-menu {
 		display: flex;
-		padding-right: 15px;
+    position: absolute;
+    right: 0;
+    transform: translateY(5%);
+    transform: translateX(-20%);
 	}
 }
 
