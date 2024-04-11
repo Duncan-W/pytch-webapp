@@ -46,21 +46,6 @@ $panel-divider-border-spec: 1px solid $panel-divider-color;
 
 }
 
-@font-face {
-  font-family: 'PxGrotesk-Light';
-  src: url('assets/type/PxGrotesk-Light.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'PxGrotesk-Regular';
-  src: url('assets/type/PxGrotesk-Regular.otf') format('opentype');
-}
-
-@font-face {
-  font-family: 'PxGrotesk-RegularIta';
-  src: url('assets/type/PxGrotesk-RegularIta.otf') format('opentype');
-}
-
 
 /*
 $color_1: $main-bg-color;
@@ -76,8 +61,8 @@ $color_9: #D5D7DB;
 $grey_1: rgb(114, 114, 114);
 $grey_2: rgb(197, 197, 197);
 $grey_3: rgb(218, 218, 218);
-$font-family_1: 'PxGrotesk-Regular', sans-serif;
-$font-family_2: 'Roboto', sans-serif;
+$font-family_1: 'Hanken Grotesk', sans-serif;
+$font-family_2: 'PxGrotesk-Bold', sans-serif;
 $background-half-fade: rgba(0, 0, 0, 0.5);
 $background-color_5: #fefefe;
 $background-color_6: #44b;

@@ -579,8 +579,13 @@ header {
 	}
 
 	* {
-		font-family: $font-family_1 !important;
+		font-family: $font-family_1;
 	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $font-family_2 !important;
+	  }
+	  
 
 
 	main {
@@ -686,6 +691,14 @@ header {
 	}
 }
 
+@media (max-width: 800px) {
+	.ccont {
+		max-width: 70% !important;
+		margin-right: 25% !important;
+	}
+}
+
+
 
 @media screen and (max-width: 768px) {
 
@@ -703,7 +716,7 @@ header {
 	header {
 		grid-template-columns: 1fr;
 		height: 600px !important;
-		min-height: 140vh !important;
+		min-height: 100vh !important;
 
 		section {
 			padding-left: 0vw;
@@ -794,12 +807,17 @@ header {
 }
 
 
+
+
 @media (max-width: 400px) {
 	.ccont {
-		max-width: 60% !important;
-		margin-right: 35% !important;
+		max-width: 75% !important;
+		margin-right: 20% !important;
 	}
 }
+
+
+
 
 
 @media (max-width: 300px) {
