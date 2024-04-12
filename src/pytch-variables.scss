@@ -47,6 +47,13 @@ $panel-divider-border-spec: 1px solid $panel-divider-color;
 }
 
 
+@font-face {
+  font-family: 'Hanken Grotesk';
+  src: url('assets/type/HankenGrotesk-VariableFont_wght.ttf') format('truetype');
+
+}
+
+
 /*
 $color_1: $main-bg-color;
 $background-color_17: $main-bg-color;
