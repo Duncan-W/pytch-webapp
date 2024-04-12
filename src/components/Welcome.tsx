@@ -57,7 +57,7 @@ function OverviewModel() {
   const [showModal, setShowModal] = useState(false);
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
-  const videoUrl = urlWithinApp("/assets/Overview.mp4");
+  const videoUrl = urlWithinApp("/assets/welcome/Overview.mp4");
 
   return (
 
@@ -235,10 +235,10 @@ const Welcome: React.FC<EmptyProps> = () => {
     document.title = "Pytch";
   });
 
-  const logosUrl = urlWithinApp("/assets/Icon-02.png");
-  const pytchUrl = urlWithinApp("/assets/normal-editor-preview-1024x693.png");
-  const pytchjrUrl = urlWithinApp("/assets/script-by-script-preview-1-1024x693.png");
-  const invadersUrl = urlWithinApp("/assets/invaders.png");
+  const logosUrl = urlWithinApp("/assets/welcome/Icon-02.png");
+  const pytchUrl = urlWithinApp("/assets/welcome/normal-editor-preview-1024x693.png");
+  const pytchjrUrl = urlWithinApp("/assets/welcome/script-by-script-preview-1-1024x693.png");
+  const invadersUrl = urlWithinApp("/assets/welcome/invaders.png");
 
   return (
 

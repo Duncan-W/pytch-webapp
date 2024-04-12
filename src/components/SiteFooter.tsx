@@ -6,9 +6,9 @@ import { urlWithinApp } from "../env-utils";
 
 
 const SiteFooter = () => {
-    const sfi_logo = urlWithinApp("/assets/sfi_logo.png");
-    const tcd_logo = urlWithinApp("/assets/tcd_logo.png");
-    const tudublin_logo = urlWithinApp("/assets/tudublin_logo.png");
+    const sfi_logo = urlWithinApp("/assets/logos/sfi_logo.png");
+    const tcd_logo = urlWithinApp("/assets/logos/tcd_logo.png");
+    const tudublin_logo = urlWithinApp("/assets/logos/tudublin_logo.png");
     return (
               <footer className="site-footer">
           <div className="section-content">
