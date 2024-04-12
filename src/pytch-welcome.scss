@@ -116,6 +116,7 @@
 
 	h2 {
 		color: $color_1;
+		font-family: $font-family_1 !important;
 	}
 
 	p {
@@ -583,7 +584,7 @@ header {
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		font-family: $font-family_2 !important;
+		font-family: $font-family_2;
 	  }
 	  
 
