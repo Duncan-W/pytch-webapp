@@ -38,8 +38,8 @@ const TutorialMiniCard: React.FC<TutorialMiniCardProps> = ({
 
   const maybeLaunchDemo = loadingSomeDemo
     ? () => {
-        /* Do nothing. */
-      }
+      /* Do nothing. */
+    }
     : () => createDemoFromTutorial(slug);
 
   const enabledOrDisabled = loadingSomeDemo ? " disabled" : " enabled";
@@ -48,12 +48,12 @@ const TutorialMiniCard: React.FC<TutorialMiniCardProps> = ({
     <Alert className="TutorialMiniCard" variant="success">
       <h2>{title}</h2>
 
-        <img
-          className={`screenshot${enabledOrDisabled}`}
-          onClick={maybeLaunchDemo}
-          src={`assets/tutorial-assets/${screenshotBasename}`}
-          alt={`screenshot of ${title}`}
-        />
+      <img
+        className={`screenshot${enabledOrDisabled}`}
+        onClick={maybeLaunchDemo}
+        src={`assets/tutorial-assets/${screenshotBasename}`}
+        alt={`screenshot of ${title}`}
+      />
 
       {children}
       <LoadingOverlay show={loadingThisDemo}>

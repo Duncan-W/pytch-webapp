@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import NavBanner from "./NavBanner";
 import TutorialCarousel from "./TutorialCarousel";
 import SiteFooter from "./SiteFooter";
@@ -168,7 +168,7 @@ const ToggleUiStylePanel_v2: React.FC<EmptyProps> = () => {
     setOperationState("idle");
   };
 
-  
+
   return (
     <div className="ToggleUiStylePanel">
       <div className="summary">
@@ -259,7 +259,7 @@ const Welcome: React.FC<EmptyProps> = () => {
       </header>
 
       <CodingJourneyModel />
-      
+
       <main>
 
         <ToggleUiStylePanel />

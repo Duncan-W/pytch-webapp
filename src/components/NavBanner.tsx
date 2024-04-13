@@ -56,13 +56,13 @@ const NavBanner = () => {
         </li>
         <li>
           <Link to="/tutorials/">Tutorials</Link>
-          </li>
+        </li>
         <li>
           <a href="https://pytch.scss.tcd.ie/lesson-plans/">Lesson plans</a>
         </li>
         <li>
           <Link to="/my-projects/">My projects</Link>
-          </li>
+        </li>
         <li className="mail">&#x2709;</li>
       </ul>
     </nav>
