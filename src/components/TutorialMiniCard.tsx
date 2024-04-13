@@ -51,7 +51,7 @@ const TutorialMiniCard: React.FC<TutorialMiniCardProps> = ({
         <img
           className={`screenshot${enabledOrDisabled}`}
           onClick={maybeLaunchDemo}
-          src={`${tutorialsDataRoot}/${slug}/tutorial-assets/${screenshotBasename}`}
+          src={`assets/tutorial-assets/${screenshotBasename}`}
           alt={`screenshot of ${title}`}
         />
 

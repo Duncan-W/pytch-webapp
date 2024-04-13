@@ -12,8 +12,8 @@ const TutorialCarousel: React.FC<EmptyProps> = () => {
     <TutorialMiniCard
       key="catch"
       title="Catch a star"
-      slug="chase"
-      screenshotBasename="screenshot.png"
+      slug="catch"
+      screenshotBasename="catch.png"
     >
       <p>
         In this introduction to coding in Pytch, you control a bird using
@@ -27,7 +27,7 @@ const TutorialCarousel: React.FC<EmptyProps> = () => {
       key="boing"
       title="Boing"
       slug="boing"
-      screenshotBasename="summary-screenshot.png"
+      screenshotBasename="boing.png"
     >
       <p>
         In the game <i>Pong</i> from 1972, players hit a ball back and
@@ -45,7 +45,7 @@ const TutorialCarousel: React.FC<EmptyProps> = () => {
       key="qbert"
       title="Q*bert"
       slug="qbert"
-      screenshotBasename="screenshot.png"
+      screenshotBasename="qbert.png"
     >
       <p>
         Jump around a pyramid of blocks, trying to change the whole stack
@@ -62,8 +62,8 @@ const TutorialCarousel: React.FC<EmptyProps> = () => {
     <TutorialMiniCard
       key="splat"
       title="Splat the moles"
-      slug="splat-the-moles"
-      screenshotBasename="screenshot-w360.jpg"
+      slug="splat"
+      screenshotBasename="splat.png"
     >
       <p>
         A game where the player has to splat moles to score points. But if they miss, they lose all their points!
